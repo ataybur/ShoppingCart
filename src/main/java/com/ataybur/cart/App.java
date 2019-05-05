@@ -3,6 +3,7 @@ package com.ataybur.cart;
 import java.io.IOException;
 
 import com.ataybur.cart.model.Campaign;
+import com.ataybur.cart.model.Cart;
 import com.ataybur.cart.model.Category;
 import com.ataybur.cart.model.Coupon;
 import com.ataybur.cart.model.DiscountType;
@@ -14,7 +15,7 @@ public class App {
 		Category category = new Category("food");
 		Product apple = new Product("Apple", 100.0, category);
 		Product almonds = new Product("Almonds", 150.0, category);
-		ShoppingCart shoppingCart = new ShoppingCart();
+		Cart shoppingCart = new ShoppingCart();
 		shoppingCart.addItem(apple, 3);
 		shoppingCart.addItem(almonds, 1);
 		Campaign campaign1 = new Campaign(category, 20.0, 3, DiscountType.Rate);
@@ -24,5 +25,9 @@ public class App {
 		Coupon coupon = new Coupon(100, 10, DiscountType.Rate);
 		shoppingCart.applyCoupons(coupon);
 		shoppingCart.print();
+		shoppingCart.getCampaignDiscount();
+		shoppingCart.getCouponDiscount();
+		shoppingCart.getDeliveryCost();
+		shoppingCart.getTotalAmountAfterDiscounts();
 	}
 }

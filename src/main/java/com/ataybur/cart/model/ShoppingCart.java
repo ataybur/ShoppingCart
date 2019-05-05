@@ -8,6 +8,8 @@ import com.ataybur.cart.utils.CartProperties;
 import com.ataybur.cart.utils.calculator.CampaignDiscountsCalculator;
 import com.ataybur.cart.utils.calculator.CouponDiscountCalculator;
 import com.ataybur.cart.utils.calculator.TotalAmountAfterDiscountsCalculator;
+import com.ataybur.cart.utils.printable.IPrintable;
+import com.ataybur.cart.utils.printable.ShoppingCartPrintable;
 
 public class ShoppingCart implements Cart {
 	private List<ProductInCart> itemList;
@@ -90,8 +92,8 @@ public class ShoppingCart implements Cart {
 
 	@Override
 	public void print() {
-		System.out.println(
-				"CategoryName:, ProductName: , Quantity:, UnitPrice: , TotalPrice: , TotalDiscount(coupon, campaign)");
+		IPrintable printable = new ShoppingCartPrintable(this);
+		System.out.println(printable.print());
 	}
 
 	@Override

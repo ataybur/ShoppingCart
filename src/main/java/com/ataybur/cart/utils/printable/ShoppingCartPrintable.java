@@ -29,7 +29,7 @@ public class ShoppingCartPrintable implements IPrintable {
 		for (Map.Entry<Category, List<ProductInCart>> entry : categoryProductInCartMap.entrySet()) {
 			BigDecimal amountPerCategory = amountMap.getOrDefault(entry.getKey(), BigDecimal.ZERO);
 			BigDecimal discountPerCategory = discountMap.getOrDefault(entry.getKey(), BigDecimal.ZERO);
-			String amountLine = String.format("Total Price: %d, Total Campaign Discount: %d", amountPerCategory.doubleValue(),discountPerCategory.doubleValue());
+			String amountLine = String.format("Total Price: %.2f, Total Campaign Discount: %.2f", amountPerCategory.doubleValue(),discountPerCategory.doubleValue());
 			for (ProductInCart productInCart : entry.getValue()) {
 				ProductInCartPrintable productInCartPrintable = new ProductInCartPrintable(productInCart);
 				String line = productInCartPrintable.print() + amountLine + System.lineSeparator();

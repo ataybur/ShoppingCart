@@ -12,7 +12,7 @@ public class ProductInCartPrintable implements IPrintable {
 
 	@Override
 	public String print() {
-		return String.format("CategoryName: %s, ProductName: %s, Quantity: %d, Unit Price: %p",
+		return String.format("CategoryName: %s, ProductName: %s, Quantity: %d, Unit Price: %.2f ",
 				instance.getProduct().getCategory().getTitle(), instance.getProduct().getTitle(),
 				instance.getQuantity(), instance.getProduct().getPrice());
 
