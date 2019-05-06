@@ -9,10 +9,10 @@ public class CartProperties {
 
 	public CartProperties(String fileName) throws IOException {
 		try {
+			ClassLoader classLoader = getClass().getClassLoader();
 			this.instance = new Properties();
-			String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
-			String appConfigPath = rootPath + fileName;
-			this.instance.load(new FileInputStream(appConfigPath));
+			String rootPath = classLoader.getResource(fileName).getPath();
+			this.instance.load(new FileInputStream(rootPath));
 		} catch (IOException e) {
 			throw e;
 		}

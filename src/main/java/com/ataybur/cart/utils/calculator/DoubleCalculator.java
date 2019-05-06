@@ -3,7 +3,7 @@ package com.ataybur.cart.utils.calculator;
 import java.math.BigDecimal;
 
 public class DoubleCalculator implements ICalculator {
-	private double instance;
+	private final double instance;
 
 	public DoubleCalculator(double instance) {
 		this.instance = instance;

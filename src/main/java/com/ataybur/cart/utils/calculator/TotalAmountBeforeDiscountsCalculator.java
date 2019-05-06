@@ -18,7 +18,7 @@ public class TotalAmountBeforeDiscountsCalculator extends AbstractShoppingCartCa
 		BigDecimal result = BigDecimal.ZERO;
 		for (ProductInCart productInCart : list) {
 			ICalculator calculator = new ProductInCartCalculator(productInCart);
-			result.add(calculator.calculate());
+			result = result.add(calculator.calculate());
 		}
 		return result;
 	}

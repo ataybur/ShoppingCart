@@ -4,7 +4,7 @@ import com.ataybur.cart.model.ProductInCart;
 
 public class ProductInCartPrintable implements IPrintable {
 
-	private ProductInCart instance;
+	private final ProductInCart instance;
 
 	public ProductInCartPrintable(ProductInCart instance) {
 		this.instance = instance;

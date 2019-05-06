@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class BigDecimalCalculator implements ICalculator{
 	
-	private BigDecimal instance;
+	private final BigDecimal instance;
 	
 	public BigDecimalCalculator(BigDecimal instance) {
 		this.instance = instance;

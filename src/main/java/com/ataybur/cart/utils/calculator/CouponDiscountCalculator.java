@@ -37,7 +37,7 @@ public class CouponDiscountCalculator extends AbstractShoppingCartCalculator {
 				ICalculator discountCalculator = new DiscountTypeCalculator(coupon, totalAmount);
 				BigDecimal discounted = discountCalculator.calculate();
 				result = result.add(discounted);
-				totalAmount.subtract(discounted);
+				totalAmount = totalAmount.subtract(discounted);
 			}
 		}
 		return result;

@@ -19,6 +19,6 @@ public class NumberUtils {
 	public static boolean isFirstOneBiggerOrEqual(BigDecimal first, double second) {
 		BigDecimal secondBD = new BigDecimal(second);
 		int value = first.compareTo(secondBD);
-		return value == 0 || value == -1;
+		return value == 1;
 	}
 }

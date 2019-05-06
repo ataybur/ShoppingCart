@@ -8,9 +8,9 @@ import com.ataybur.cart.utils.NumberUtils;
 
 public class DiscountTypeCalculator implements ICalculator {
 
-	private DiscountType discountType;
-	private BigDecimal amount;
-	private double discountRatio;
+	private final DiscountType discountType;
+	private final BigDecimal amount;
+	private final double discountRatio;
 
 	public <T extends Discount >DiscountTypeCalculator(T discount, BigDecimal amount) {
 		super();

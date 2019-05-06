@@ -6,7 +6,7 @@ import com.ataybur.cart.model.ProductInCart;
 
 public class ProductInCartCalculator implements ICalculator {
 
-	private ProductInCart instance;
+	private final ProductInCart instance;
 
 	public ProductInCartCalculator(ProductInCart instance) {
 		this.instance = instance;

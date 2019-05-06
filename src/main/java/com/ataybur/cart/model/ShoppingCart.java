@@ -23,21 +23,24 @@ public class ShoppingCart implements Cart {
 		} catch (IOException e) {
 			throw e;
 		}
+		if (campaignList == null) {
+			campaignList = new ArrayList<>();
+		}
+		if (itemList == null) {
+			itemList = new ArrayList<>();
+		}
+		if (couponList == null) {
+			couponList = new ArrayList<>();
+		}
 	}
 
 	@Override
 	public void addItem(Product product, int quantity) {
-		if (itemList == null) {
-			itemList = new ArrayList<>();
-		}
 		itemList.add(new ProductInCart(product, quantity));
 	}
 
 	@Override
 	public void applyDiscounts(Campaign... campaigns) {
-		if (campaignList == null) {
-			campaignList = new ArrayList<>();
-		}
 		for (Campaign campaign : campaigns) {
 			campaignList.add(campaign);
 		}
@@ -45,9 +48,6 @@ public class ShoppingCart implements Cart {
 
 	@Override
 	public void applyCoupons(Coupon... coupons) {
-		if (couponList == null) {
-			couponList = new ArrayList<>();
-		}
 		for (Coupon coupon : coupons) {
 			couponList.add(coupon);
 		}
