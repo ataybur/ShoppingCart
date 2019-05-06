@@ -40,6 +40,10 @@ public class ShoppingCartPrintable implements IPrintable {
 				sb.append(line);
 			}
 		}
+		double totalAmountAfterDiscounts = this.instance.getTotalAmountAfterDiscounts();
+		double deliveryCost = this.instance.getDeliveryCost();
+		String totalAmountLine = String.format("Total Amount: %.2f, Delivery Cost: %.2f", totalAmountAfterDiscounts,deliveryCost);
+		sb.append(totalAmountLine);
 		return sb.toString();
 
 	}

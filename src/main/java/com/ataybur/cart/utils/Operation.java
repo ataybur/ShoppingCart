@@ -18,7 +18,7 @@ public class Operation implements IOperation {
 
 	@Override
 	public ICalculator multiply(ICalculator... calculators) {
-		BigDecimal result = BigDecimal.ZERO;
+		BigDecimal result = BigDecimal.ONE;
 		for (ICalculator calculator : calculators) {
 			result = result.multiply(calculator.calculate());
 		}

@@ -18,7 +18,7 @@ import com.ataybur.cart.utils.calculator.ICalculator;
 import com.ataybur.cart.utils.calculator.ProductInCartCalculator;
 
 public class ShoppingCartServiceImpl implements ShoppingCartService {
-
+	
 	@Override
 	public Set<Category> getCategorySetFromShoppingCart(ShoppingCart cart) {
 		List<ProductInCart> list = cart.getItemList();

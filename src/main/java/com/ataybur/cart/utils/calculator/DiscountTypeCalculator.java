@@ -28,8 +28,8 @@ public class DiscountTypeCalculator implements ICalculator {
 		BigDecimal result = BigDecimal.ZERO;
 		if (discountType == DiscountType.Rate) {
 			result = NumberUtils.dividePercent(amount.doubleValue(), discountRatio);
-		} else if (discountType == DiscountType.Rate) {
-			result = NumberUtils.subtract(amount.doubleValue(), discountRatio);
+		} else if (discountType == DiscountType.Amount) {
+			result = new BigDecimal(discountRatio);
 		}
 
 		return result;
